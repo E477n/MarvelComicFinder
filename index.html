@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching Marvel Comics</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/md5.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="container1" class="container-fluid">
+        <div class="jumbotron margin-bottom-02">
+            <h1 id="siteTitle">Marvel Comic Finder</h1>
+            <form>
+                <div class="row margin-top-50">
+                    <div class="col-md-3 col-lg-3"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text navy-border">ComicTitle</span>
+                            </div>
+                            <input id="title" type="text" class="form-control navy-border" aria-describedby="basic-addon3">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 form-group">
+                        <div class='input-group mb-3 date' id='datepicker'>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text navy-border" id="basic-addon3">StartYear</span>
+                            </div>
+                            <input id="startYear" type='text' class="form-control navy-border" readonly="readonly"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>
+                            </span>
+                        </div>
+                   </div>
+                    <div class="col-md-3 col-lg-3"></div>
+                </div>
+                <div id="manageBar" class="container-fluid manage-bar">
+                    <div class="row" >
+                        <div class="col-md-12">
+                            <form class="form-group margin-bottom-0">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Format</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="cb1" value="Comic" checked>
+                                            <label class="form-check-label" for="cb1">Comic</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="cb2" value="Digital Comic" checked>
+                                            <label class="form-check-label" for="cb2">Digital Comic</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="cb3" value="Hardcover" checked>
+                                            <label class="form-check-label" for="cb3">Hardcover</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Sort By</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="sortbycolumn" class="custom-select">
+                                        <option selected value="">default order</option>
+                                        <option value="title">comic title</option>
+                                        <option value="issueNumber">issue number</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="sortorder" class="custom-select">
+                                        <option value="">ascending</option>
+                                        <option value="-">descending</option>
+                                    </select>
+                                    <!--<button type="button" class="btn btn-default" aria-label="Left Align">-->
+                                        <!--<span class="fa fa-sort-amount-up" aria-hidden="true"></span>-->
+                                    <!--</button>-->
+                                    <!--<button type="button" class="btn btn-default" aria-label="Left Align">-->
+                                        <!--<span class="fa fa-sort-amount-down" aria-hidden="true"></span>-->
+                                    <!--</button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row warning"><span id="warningMessage"></span></div>
+                <div class="row inline-block">
+                    <a class="btn" onclick="reset()"><u>Reset</u></a>
+                    <a class="btn btn-light btn-lg navy-border" role="button" onclick="startSearch()">search</a>
+                    <a class="btn" id="advancedSearch"><u><span class="fa fa-plus"></span>Advanced</u></a>
+                </div>
+            </form>
+            <div class="row result-number"><span id="resultNumber"></span></div>
+        </div>
+    </div>
+    <div id="container2" class="container-fluid">
+        <div id="resultRow" class="row">
+        </div>
+        <div id="nav" class="row">
+            <ul class="pagination">
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

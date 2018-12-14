@@ -1,0 +1,94 @@
+.margin-top-50{
+    margin-top: 50px;
+}
+.margin-bottom-0{
+    margin-bottom: 0 !important;
+}
+.margin-bottom-02{
+    margin-bottom: 0.2em !important;
+}
+.border-right-dash{
+    border-right: 1px dashed navy;
+}
+.border-right-solid{
+    border-right: 1px solid navy;
+}
+
+.inline-block{
+    display: inline-block !important;
+}
+.hidden{
+    visibility: hidden;
+}
+
+#siteTitle{
+    text-align: center;
+    color: darkred;
+    font-size: 5em;
+}
+
+#container1{
+    text-align: center;
+}
+.jumbotron{
+    background-image: url("../photo/marvel_cover1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0px;
+}
+.navy-border{
+    border-color: navy !important;
+    border-width: 1px !important;
+}
+.input-group-text{
+    color:navy !important;
+}
+.warning{
+    display: inherit !important;
+    color: darkred;
+    margin-bottom: 20px;
+}
+.btn{
+    color:navy !important;
+}
+#startYear{
+    background-color: white;
+}
+.result-number{
+    color: navy;
+    display: inherit !important;
+    margin-top: 20px;
+}
+
+.manage-bar{
+    background-color: rgba(181, 194, 212, 0.65);
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    border-radius: 0.2em;
+    padding: 10px;
+    color: navy;
+    width: 50% !important;
+    display: inline-block;
+}
+
+#resultRow{
+    padding-left: 150px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+}
+.card{
+    margin: 10px;
+    padding: 0px !important;
+}
+.card-text{
+    color: rgba(77, 74, 79, 0.82);
+    font-size: 12px;
+}
+
+#nav ul{
+    margin-left: auto;
+    margin-right: auto;
+}
+#nav ul li a{
+    color:navy;
+}
